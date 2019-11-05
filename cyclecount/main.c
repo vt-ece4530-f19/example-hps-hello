@@ -15,7 +15,10 @@ static int fddev = -1;
 __attribute__((constructor)) static void init(void) {
 	static struct perf_event_attr attr;
 	attr.type = PERF_TYPE_HARDWARE;
-	attr.config = PERF_COUNT_HW_CPU_CYCLES;
+//	attr.config = PERF_COUNT_HW_CPU_CYCLES;
+//	attr.config = PERF_COUNT_HW_INSTRUCTIONS;
+//	attr.config = PERF_COUNT_HW_CACHE_MISSES;
+	attr.config = PERF_COUNT_SW_TASK_CLOCK;
 	fddev = syscall(__NR_perf_event_open, &attr, 0, -1, -1, 0);
 }
 

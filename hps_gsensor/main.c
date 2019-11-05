@@ -71,6 +71,7 @@ int main(int argc, char *argv[]){
   uint16_t szXYZ[3];
   int cnt=0, max_cnt=0;
   
+
   printf("===== gsensor test =====\r\n");
   
   if (argc == 2){
@@ -112,7 +113,7 @@ int main(int argc, char *argv[]){
 	cnt++;
 	printf("[%d]X=%d mg, Y=%d mg, Z=%d mg\r\n", cnt,(int16_t)szXYZ[0]*mg_per_digi, (int16_t)szXYZ[1]*mg_per_digi, (int16_t)szXYZ[2]*mg_per_digi);
 	// show raw data, 
-	//printf("X=%04x, Y=%04x, Z=%04x\r\n", (alt_u16)szXYZ[0], (alt_u16)szXYZ[1],(alt_u16)szXYZ[2]);
+	printf("X=%04x, Y=%04x, Z=%04x\r\n", (uint16_t)szXYZ[0], (uint16_t)szXYZ[1],(uint16_t)szXYZ[2]);
 	usleep(1000*1000);
       }
     }
